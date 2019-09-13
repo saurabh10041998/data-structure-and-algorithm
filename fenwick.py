@@ -44,4 +44,18 @@ class Fenwick:
             self.tree[idx - 1] +=delta
             idx += lowestSetBit(idx)
     
+    # idx of 1-based array, value is actual value to change to
+    def updateToValue(self, idx, value):
+        if idx < 1:
+            raise Exception("Invalid index, must be atleast 1")
+        if idx > len(self.tree):
+            raise Exception("Index out of bound exception")
+        delta = value - self.tree[idx - 1]
+        while idx <= len(self.tree):
+            self.tree[idx -1] += delta
+            idx += lowestSetBit(idx)
+    
+    
+def lowestSetBit(idx):
+    return (idx & -idx)
     
