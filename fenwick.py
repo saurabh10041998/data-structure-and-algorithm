@@ -1,3 +1,4 @@
+import copy
 class Fenwick:
     def __init__(self, a):
         for (idx, v) in enumerate(a):
@@ -35,7 +36,7 @@ class Fenwick:
             return self.prefixSum(end) - self.prefixSum(start - 1)
         
     # idx of 1-based array, delta is amount to increment/ decrement
-    def update(self, idx, value):
+    def update(self, idx, delta):
         if idx < 1:
             raise Exception("Invalid index, must be atleast 1")
         if idx > len(self.tree):
@@ -58,4 +59,20 @@ class Fenwick:
     
 def lowestSetBit(idx):
     return (idx & -idx)
+
+
+if __name__ == "__main__":
+   a = [1,2,3,4,5,6,7,8,9,10]
+
+   tree = Fenwick(copy.deepcopy(a))
+   assert(tree.tree == [1,3,3,10, 5, 11, 7, 36, 9, 19])
+   print(tree)
+
+   print(tree.range(2, 7))
+
+   tree.update(4, 1)
+   print(tree)
+
+   print(tree.prefixSum(0))
+
     
