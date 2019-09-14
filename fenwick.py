@@ -2,9 +2,10 @@ import copy
 class Fenwick:
     def __init__(self, a):
         for (idx, v) in enumerate(a):
-            nextIdx = (idx + 1) + lowestSetBit(idx+1) - 1
+            nextIdx = (idx + 1) + lowestSetBit(idx+1) - 1            
             if nextIdx < len(a):
                 a[nextIdx] += v
+            print(a)
         self.tree = a
     
 
