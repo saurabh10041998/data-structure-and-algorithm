@@ -1,17 +1,19 @@
-def pattern(n,text):
-    for i in range(1,n):
-        for j in range((n-1)-i,0,-1):
-            print(end=" ")
-        for k in range(i,0,-1):
-            print("*",end=" ")
-        print()
-    print(text)
-    for i in range(n-1,0,-1):
-        for  j in range(n-i-1,0,-1):
-            print(end=" ")
-        for k in range(0,i,1):
-            print("*",end=" ")
-        print()
-n=int(input())
-text = input()
-pattern(n,text)
+import sys
+import operator
+from itertools import groupby
+std = sys.stdin
+if __name__ == "__main__":
+    stu_data = []
+    N = int(std.readline())
+    for i in range(N):
+        name = std.readline().rstrip('\n')
+        mark = float(std.readline())
+        stu_data.append((name, mark))
+    test = sorted(stu_data, key=operator.itemgetter(1,0))
+    it = groupby(test, key=operator.itemgetter(1))
+    value = list(it)[1]
+    for i in value:
+        print(i[1][0])
+        
+    
+    
