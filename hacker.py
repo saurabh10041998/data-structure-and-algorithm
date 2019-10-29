@@ -1,20 +1,12 @@
 import sys
-std =  sys.stdin
+std = sys.stdin
 
-s  = std.readline().rstrip("\n")
-kevin,stuart = 0, 0
+N = int(std.readline())
 
-n = len(s)
+pattern = "" 
 
-for i in range(len(s)):
-    if s[i] in ['A','E','I','O','U']:
-        kevin += n-i
-    else:
-        stuart += n-i
+space = 2*N-1
 
-if stuart > kevin:
-    print("Stuart", stuart)
-elif stuart < kevin:
-    print("Kevin", kevin)
-else:
-    print("Draw")
+for i in range(1, N+1):
+    pattern += ("* " * i).center(space, " ") + '\n'
+print(pattern)
