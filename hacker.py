@@ -1,32 +1,19 @@
-# piling up cube(i) on top cube(j) side(j) >= side(i)
-# stacking leftmost or rightmost (popleft, pop) ===> deque 
-# 4 3 2 1 3 4
-# order : 4(L)[4,3,2,1,3,4] => 4(R)[3,2,1,3,4] => 3(L)[3,2,1,3] => 3(R) => 2(L) => 1(L/R) ===> yes
-# 1 3 2
-# order: 2(R) => 1(L)
-
-# logic: select left or right depending upon current top
-
-from collections import deque
+# hotel room: captain + number of k membered family..
+# one room => captain and one room per group
+# room entry(groups) => k times per group
+# except captains room 
+# set{lst} = room num of all
+# K*sum(set) - sum_cal = (K*group + K*captain) - (K*group + captain) = (K-1)*captain // (K-1) = captain
 import sys
-
 std = sys.stdin
+if __name__ == "__main__":
+    K = int(std.readline())
+    lst = [int(x) for x in std.readline().split()]
+    sum_list = 0
+    data_set  = set()
+    for i in lst:
+        data_set.add(i)
+        sum_list += i
+    print((sum(data_set) * K - sum_list) // (k-1))
 
-T = int(std.readline())
-for i in range(T):
-    data = deque(map(int, std.readline().rstrip('\n').split(' ')))
-    possible = True
-    x = sys.maxsize     # initially ground
-
-    while len(data) > 0 and possible:
-        if x >= max(data[0], data[-1]): #current top x
-            if data[0] > data[-1]:
-                x =  data.popleft()
-            else:
-                x = data.pop()
-        else:
-            possible = False
-    if len(data) == 0 and possible:
-        print("Yes")
-    else:
-        print("No")
+    
