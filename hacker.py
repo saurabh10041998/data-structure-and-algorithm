@@ -1,22 +1,32 @@
-# spreadsheet column ID MARKS CLASS NAME (in any order)
-# first parse the string to create the namedtuple
-from collections import namedtuple
+# piling up cube(i) on top cube(j) side(j) >= side(i)
+# stacking leftmost or rightmost (popleft, pop) ===> deque 
+# 4 3 2 1 3 4
+# order : 4(L)[4,3,2,1,3,4] => 4(R)[3,2,1,3,4] => 3(L)[3,2,1,3] => 3(R) => 2(L) => 1(L/R) ===> yes
+# 1 3 2
+# order: 2(R) => 1(L)
 
-N = int(input())
+# logic: select left or right depending upon current top
 
-column = input()
-data = ",".join(column.split())
-Student = namedtuple('Student', data)
+from collections import deque
+import sys
 
-dataset = []
-for i in range(N):
-    stu_data = input().split()
-    dataset.append(Student(*stu_data))
+std = sys.stdin
 
-average  = 0
-for i range(len(dataset)):
-    average += int(dataset[i].MARKS)
-print(average // len(dataset))
+T = int(std.readline())
+for i in range(T):
+    data = deque(map(int, std.readline().rstrip('\n').split(' ')))
+    possible = True
+    x = sys.maxsize     # initially ground
 
-
-
+    while len(data) > 0 and possible:
+        if x >= max(data[0], data[-1]): #current top x
+            if data[0] > data[-1]:
+                x =  data.popleft()
+            else:
+                x = data.pop()
+        else:
+            possible = False
+    if len(data) == 0 and possible:
+        print("Yes")
+    else:
+        print("No")
