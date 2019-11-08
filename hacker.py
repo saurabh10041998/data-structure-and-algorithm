@@ -1,19 +1,32 @@
-# hotel room: captain + number of k membered family..
-# one room => captain and one room per group
-# room entry(groups) => k times per group
-# except captains room 
-# set{lst} = room num of all
-# K*sum(set) - sum_cal = (K*group + K*captain) - (K*group + captain) = (K-1)*captain // (K-1) = captain
-import sys
-std = sys.stdin
-if __name__ == "__main__":
-    K = int(std.readline())
-    lst = [int(x) for x in std.readline().split()]
-    sum_list = 0
-    data_set  = set()
-    for i in lst:
-        data_set.add(i)
-        sum_list += i
-    print((sum(data_set) * K - sum_list) // (k-1))
+# css parsing 
+# format => 
+"""
+selector
+{ ===> start flag = true
+    property: value,
+} ===> start flag = false
 
-    
+"""
+# pattern for css color parsing =>
+# pat = ​^#[0-9A-Fa-f]{3,6}$
+
+import re
+x = re.compile(r"​^#[0-9A-Fa-f]{3,6}$")
+bo = re.compile(r'\{')
+bc = re.compile(r'\}')
+if __name__ == "__main__":
+    start = False
+    N = int(input())
+    for i in range(N):
+        string = input()
+        #check for curly braces
+        if bo.search(string):
+            start = True
+        elif bc.search(string):
+            start = False
+        elif start:
+             prop, value = string.split(":")
+             y = re.findall(x, value)
+             print(y)
+        else:
+            continue      

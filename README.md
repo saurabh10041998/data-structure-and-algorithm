@@ -23,3 +23,18 @@
 7. difference_update => set1.difference_update(set2) or set1 -= set2
 8. symmetric_difference_update => set1.symmetric_difference_update(set2) or set1 ^= set2
 9. issubset : set1 <= set2 => True=> set1 subset of set2
+
+## itertools
+1. permutations of size r => from itertools import permutations => permutations(iterable, size)
+2. combinations of size r => from itertools import combinations => combinations(iterable, size)
+3. combinations_with_replacement
+
+## python calendar module
+
+1. import calendar.. :) one of the coolest moodule...
+
+## python regex module
+1. import re ..=> cool module to deal with strings and substrings
+
+## python html parser module
+1. from html.parser import HTMLParser => shit ass parser to parse HTML
