@@ -38,3 +38,32 @@
 
 ## python html parser module
 1. from html.parser import HTMLParser => shit ass parser to parse HTML
+
+## python fraction module
+1. from fractions import Fraction => supercool module to deal with Fractions and arithmetic..
+
+## set methods:
+1. pop, remove, discard..
+
+## numpy module 
+import numpy as np ==> axis = 0 => column, axis = 1 => row
+1. numpy.sum ---> axis = 0,1,None
+2. numpy.prod ---> ""
+3. numpy.min---> ""
+4. numpy.max ---> ""
+5. numpy.mean-->""
+6. numpy.var--> ""
+7. numpy.std--> ""
+8. numpy.dot --> matrix product
+9. numpy.cross --> cross product
+10. numpy.inner
+11. numpy.outer
+12. numpy.poly
+13. numpy.roots
+14. numpy.polyint
+15. numpy.polyval
+16. numpy.polyder
+17. numpy.polyfit
+18. numpy.linalg.det
+19. numpy.linalg.eig--> eigen value and eigen vector
+20. numpy.linalg.inv--> multiplicative inverse
