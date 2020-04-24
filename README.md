@@ -67,3 +67,7 @@ import numpy as np ==> axis = 0 => column, axis = 1 => row
 18. numpy.linalg.det
 19. numpy.linalg.eig--> eigen value and eigen vector
 20. numpy.linalg.inv--> multiplicative inverse
+
+## Factorial
+
+you can find the great article about it at <a href = "https://iamit.in/blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution/">here</a>
