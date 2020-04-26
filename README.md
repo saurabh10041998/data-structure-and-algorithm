@@ -72,6 +72,7 @@ import numpy as np ==> axis = 0 => column, axis = 1 => row
 
 you can find the great article about it at <a href = "https://iamit.in/blog/Spoj-Problem-Small-Factorials-FCTRL2-Explanation-and-Solution/">here</a>
 
-## Hackerrank problem links
+## Hackerrank problem links (video link : https://youtu.be/GwVDCi8CCAI)
 
 1. Sherlock and permutation : great problem on modular arithmetic <a href = "https://www.hackerrank.com/challenges/sherlock-and-permutations/problem"> Here </a> and article is <a href = "http://theoryofprogramming.com/2014/12/24/modular-arithmetic-properties/"> Here </a>
+2. Recursive Sequence : Problem on SPOJ
